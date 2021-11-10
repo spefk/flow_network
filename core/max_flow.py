@@ -11,10 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 class MaxFlow(metaclass=ABCMeta):
-    def __init__(self):
-        pass
-
-    def process_network(self, network: ResidualNetwork, max_iter=1000) -> None:
+    def process_network(self, network: ResidualNetwork, max_iter=100) -> None:
         logger.debug("Preparing MaxFlow search.")
         for _ in range(max_iter):
             path = self.get_increasing_path(network)

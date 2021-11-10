@@ -112,7 +112,11 @@ class ResidualNetwork(Network):
 
     @staticmethod
     def increase_flow_by_path(path: ResidualPath):
-        value = min([p.available_capacity_from(src) for src, p in path])
+        _caps = [p.available_capacity_from(src) for src, p in path]
+        if _caps:
+            value = min(_caps)
+        else:
+            value = 0
         for src, p in path:
             p.increase_flow_from(src, value)
 
