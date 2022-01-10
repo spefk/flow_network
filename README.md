@@ -1,4 +1,6 @@
 # Some algorithms for flows in networks.
+made for SPbSUE course home assignment
+___
 
 ### Example
 Algorithms usage example with mean time measurement could be found in `./example.py`. 
